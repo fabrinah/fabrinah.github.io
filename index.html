@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fabrinah - Data Entry &amp; AI data annotation Specialist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero__bg-pattern"></div>
+
+    <nav class="nav">
+      <span class="nav__logo">F.</span>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero__content">
+      <div class="hero__photo-wrapper">
+        <div class="hero__photo-ring"></div>
+        <img
+          src="profile.jpg"
+          alt="Fabrinah profile photo"
+          class="hero__photo"
+        />
+      </div>
+
+      <div class="hero__text">
+        <p class="hero__greeting">Hello there</p>
+        <h1 class="hero__name">Hi, I'm <em>Fabrinah.</em></h1>
+        <p class="hero__title">I'm a Data Entry &amp; AI Data Annotation specialist</p>
+        <a href="#contact" class="hero__cta">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <span class="section-label">About me</span>
+      <h2 class="section-title">Precision meets <em>dedication</em></h2>
+      <p class="about__body">
+          I specialise in accurate, efficient data entry and AI data annotation. Detail-oriented by nature, I help organisations maintain clean, reliable data and well-labelled AI datasets, so they can focus on what matters.
+      </p>
+      <ul class="about__stats">
+        <li><strong>7</strong><span>Projects completed</span></li>
+        <li><strong>Fast</strong><span>Learner</span></li>
+        <li><strong>100%</strong><span>Accuracy-first approach</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services__inner">
+      <span class="section-label">What I do</span>
+      <h2 class="section-title">Services</h2>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">⬡</div>
+          <h3>Data Entry + Automation</h3>
+          <p>Manual data entry combined with smart automation to save time and reduce errors. I streamline repetitive tasks using tools and scripts, ensuring faster and more reliable results.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">⬡</div>
+          <h3>Bulk Data Processing</h3>
+          <p>Handling large volumes of data from CSV and Excel files, scanned PDFs, and database exports, processed efficiently and delivered on time.</p>
+          <p></p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">⬡</div>
+          <h3>Clean &amp; Structured Datasets</h3>
+          <p>Raw data transformed into analysis-ready outputs: deduplicated records, standardised formatting, organised spreadsheets, and clear reports, ready for your team to use immediately.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">⬡</div>
+          <h3>AI Data Annotation</h3>
+          <p>Precise image labelling for machine learning pipelines: bounding boxes, object tagging, and full dataset preparation. Experienced with Roboflow, with a focus on consistency and annotation quality that models can actually train on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact__inner">
+      <span class="section-label">Let's work together</span>
+      <h2 class="section-title">Get in touch</h2>
+      <p class="contact__sub">Have a project in mind? Fill in the form and I'll get back to you.</p>
+
+      <form class="contact__form" id="contactForm">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+        <input type="hidden" name="subject" value="New message from your portfolio" />
+        <input type="checkbox" name="botcheck" style="display:none;" />
+
+        <div class="contact__row">
+          <div class="contact__field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="contact__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+        </div>
+
+        <div class="contact__field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+
+        <button type="submit" class="contact__submit" id="submitBtn">
+          <span id="submitText">Send message</span>
+        </button>
+
+        <p class="contact__feedback" id="formFeedback"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Fabrinah. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitText.textContent = 'Sending...';
+      feedback.textContent = '';
+      feedback.className = 'contact__feedback';
+
+      const data = Object.fromEntries(new FormData(form));
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          feedback.textContent = 'Message sent! I\'ll get back to you soon.';
+          feedback.classList.add('contact__feedback--success');
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      } catch {
+        feedback.textContent = 'Something went wrong. Please try again.';
+        feedback.classList.add('contact__feedback--error');
+      } finally {
+        submitBtn.disabled = false;
+        submitText.textContent = 'Send message';
+      }
+    });
+  </script>
+</body>
+</html>
