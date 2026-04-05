@@ -570,3 +570,163 @@ em {
     gap: 1.5rem;
   }
 }
+
+/* ─────────────────────────────────────────────
+   PRIVACY PAGE
+───────────────────────────────────────────── */
+
+.policy-hero {
+  background-color: var(--emerald-dark);
+  padding: 0 2rem 5rem;
+  position: relative;
+}
+
+.policy-hero::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  border: 1px solid rgba(80, 200, 120, 0.15);
+  pointer-events: none;
+}
+
+.policy-hero__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding-top: 8rem;
+}
+
+.policy-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color var(--transition);
+}
+
+.policy-hero__back::before {
+  content: '←';
+  font-size: 0.9rem;
+}
+
+.policy-hero__back:hover {
+  color: var(--emerald);
+}
+
+.policy-meta {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: rgba(168, 196, 176, 0.5);
+  margin-bottom: 0;
+}
+
+/* Body */
+.policy-body {
+  background-color: var(--emerald-deep);
+  padding: 5rem 2rem 7rem;
+}
+
+.policy-body__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.policy-section {
+  margin-bottom: 3rem;
+}
+
+.policy-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.policy-section p {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.policy-section strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.policy-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0.85rem;
+}
+
+.policy-section ul li {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 0.3rem;
+}
+
+.policy-section ul li::before {
+  content: '⬡';
+  position: absolute;
+  left: 0;
+  font-size: 0.5rem;
+  color: var(--emerald);
+  top: 0.6rem;
+}
+
+.policy-section a {
+  color: var(--emerald);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+.policy-section a:hover {
+  opacity: 0.75;
+}
+
+.policy-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(80, 200, 120, 0.35);
+  margin: 3rem 0;
+}
+
+/* Contact form privacy note */
+.contact__privacy-note {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.04em;
+  margin-top: -0.25rem;
+}
+
+.contact__privacy-note a {
+  color: rgba(80, 200, 120, 0.7);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.contact__privacy-note a:hover {
+  color: var(--emerald);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .policy-hero {
+    padding-bottom: 4rem;
+  }
+}
