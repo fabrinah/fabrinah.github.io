@@ -24,6 +24,7 @@ I focus on efficiency, reliability, and delivering clean, structured data that i
 
 * HTML
 * CSS
+* JAVASCRIPT
 
 ## 📌 Purpose
 
@@ -31,4 +32,4 @@ This website is designed as a simple and responsive portfolio to present my serv
 
 ---
 💼 Available for freelance work<br>
-Feel free to contact me for opportunities.
+Feel free to <a href="https://fabrinah.github.io/#contact" target="_blank">contact me</a> for opportunities.
